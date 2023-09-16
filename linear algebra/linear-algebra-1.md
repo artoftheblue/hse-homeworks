@@ -1,6 +1,6 @@
 ## Problem 1
 
-Let $A$ be some matrix and $\lambda, \mu \in \R$. Prove that $(\lambda + \mu)A = \lambda A + \mu A$ and $\lambda(\mu A) = (\lambda\mu)A$.
+Let $A$ be some matrix and $\lambda, \mu \in \mathbb{R}$. Prove that $(\lambda + \mu)A = \lambda A + \mu A$ and $\lambda(\mu A) = (\lambda\mu)A$.
 
 ### Solution
 
@@ -162,10 +162,7 @@ $$=\begin{pmatrix}
 
 ## Problem 3
 
-Find all $(2 \times 2)$ matrices $B$ that commute with matrix $A = \begin{pmatrix}
-2 & -1 \\
-1 & 0
-\end{pmatrix}$, i. e. for which $AB=BA$.
+Find all $(2 \times 2)$ matrices $B$ that commute with matrix $A = \begin{pmatrix} 2 & -1 \\ 1 & 0 \end{pmatrix}$, i. e. for which $AB=BA$.
 
 ### Solution
 
@@ -207,10 +204,7 @@ b_{12} = -b_{21} \\
 b_{11} = b_{22} + 2b_{21}
 \end{cases}$$
 
-Thus, considering $b_{21} = x$, $b_{22} = y$, matrix $B=\begin{pmatrix}
-y+2x & -x \\
-x & y
-\end{pmatrix}$
+Thus, considering $b_{21} = x$, $b_{22} = y$, matrix $B=\begin{pmatrix} y+2x & -x \\ x & y \end{pmatrix}$.
 
 ## Problem 4
 
@@ -279,13 +273,7 @@ $$=\begin{pmatrix}
 \sin ((n+1)\alpha) & \cos ((n+1)\alpha)
 \end{pmatrix}$$
 
-Therefore, $\begin{pmatrix}
-\cos\alpha & -\sin\alpha \\
-\sin\alpha & \cos\alpha
-\end{pmatrix}^n = \begin{pmatrix}
-\cos n\alpha & -\sin n\alpha \\
-\sin n\alpha & \cos n\alpha
-\end{pmatrix}$, q. e. d.
+Therefore, $\begin{pmatrix} \cos\alpha & -\sin\alpha \\ \sin\alpha & \cos\alpha \end{pmatrix}^n = \begin{pmatrix} \cos n\alpha & -\sin n\alpha \\ \sin n\alpha & \cos n\alpha \end{pmatrix}$, q. e. d.
 
 ## Problem 5
 
@@ -331,7 +319,8 @@ $$\begin{pmatrix}
 0 & & & \lambda_n^2
 \end{pmatrix}$$
 
-Similarly as in Problem 4, prove the hypothesis that $\begin{pmatrix}
+Similarly as in Problem 4, prove the hypothesis that
+$$\begin{pmatrix}
 \lambda_1 & & & 0 \\
  & \lambda_2 & & \\
  & & \ddots & \\
@@ -341,7 +330,8 @@ Similarly as in Problem 4, prove the hypothesis that $\begin{pmatrix}
  & \lambda_2^k & & \\
  & & \ddots & \\
 0 & & & \lambda_n^k
-\end{pmatrix}$ via induction. The induction base is true as previously described. We need to check whether the induction step is true:
+\end{pmatrix}$$
+via induction. The induction base is true as previously described. We need to check whether the induction step is true:
 
 $$\begin{pmatrix}
 \lambda_1^k & & & 0 \\
@@ -367,7 +357,9 @@ $$=\begin{pmatrix}
 0 & & & \lambda_n^{k+1}
 \end{pmatrix}$$
 
-Therefore, $\begin{pmatrix}
+Therefore, 
+
+$$\begin{pmatrix}
 \lambda_1 & & & 0 \\
  & \lambda_2 & & \\
  & & \ddots & \\
@@ -377,7 +369,8 @@ Therefore, $\begin{pmatrix}
  & \lambda_2^k & & \\
  & & \ddots & \\
 0 & & & \lambda_n^k
-\end{pmatrix}$, q. e. d.
+\end{pmatrix}$$
+q. e. d.
 
 ## Problem 6
 
@@ -441,13 +434,17 @@ $$=\begin{pmatrix}
 0 & \lambda^{n+1}
 \end{pmatrix}$$
 
-Therefore, $\begin{pmatrix}
+Therefore, 
+
+$$\begin{pmatrix}
 \lambda & 1 \\
 0 & \lambda
 \end{pmatrix}^n = \begin{pmatrix}
 \lambda^{n+1} & (n+1)\lambda^n \\
 0 & \lambda^{n+1}
-\end{pmatrix}$, q. e. d.
+\end{pmatrix}$$
+
+ q. e. d.
 
 ## Problem 7
 
@@ -508,7 +505,6 @@ $$H^n=\begin{pmatrix}
 \end{pmatrix}=\begin{pmatrix}
 0 & \dots & 0 & 1 & 0 & \dots & 0 \\
 0 & \dots & 0 & 0 & 1 & \dots & 0 \\
-
 \vdots & \vdots & \vdots & \vdots & \vdots & \ddots & \vdots \\
 0 & \dots & 0 & 0 & 0 & \dots & 1 \\
 0 & \dots & 0 & 0 & 0 & \dots & 0 \\
@@ -520,7 +516,4 @@ Therefore, the induction step is true, q. e. d.
 
 **NB:** The equation that determines the result matrix is identical to a zero matrix if $n \geq k$.
 
-**Answer:** $H^n = \begin{pmatrix}h_{ij}\end{pmatrix}$, where: $h_{ij}=\begin{cases}
-1, \text{if} \ j-i=n \\
-0, \text{otherwise}
-\end{cases}$
+**Answer:** $H^n = \begin{pmatrix}h_{ij}\end{pmatrix}$, where: $h_{ij}=\begin{cases} 1, \text{if} \ j-i=n \\ 0, \text{otherwise} \end{cases}$
