@@ -407,7 +407,7 @@ $$\begin{pmatrix}
 Induction base is already proven, now we need to prove that $\begin{pmatrix}
 \lambda^n & n\lambda^{n-1} \\
 0 & \lambda^n
-\end{pmatrix}^n\begin{pmatrix}
+\end{pmatrix}\begin{pmatrix}
 \lambda & 1 \\
 0 & \lambda
 \end{pmatrix}=\begin{pmatrix}
@@ -418,7 +418,7 @@ Induction base is already proven, now we need to prove that $\begin{pmatrix}
 $$\begin{pmatrix}
 \lambda^n & n\lambda^{n-1} \\
 0 & \lambda^n
-\end{pmatrix}^n\begin{pmatrix}
+\end{pmatrix}\begin{pmatrix}
 \lambda & 1 \\
 0 & \lambda
 \end{pmatrix}=\begin{pmatrix}
@@ -440,8 +440,8 @@ $$\begin{pmatrix}
 \lambda & 1 \\
 0 & \lambda
 \end{pmatrix}^n = \begin{pmatrix}
-\lambda^{n+1} & (n+1)\lambda^n \\
-0 & \lambda^{n+1}
+\lambda^n & n\lambda^{n-1} \\
+0 & \lambda^n
 \end{pmatrix}$$
 
  q. e. d.
@@ -488,7 +488,7 @@ The induction base is already proven ($H^1=H$). Therefore, we need to check whet
 
 For some $n < k$, where $k$ is the matrix's dimension, we multiply $H^n$ by $H$ (positions are represented accurately in each of the multiplication steps):
 
-$$H^n=\begin{pmatrix}
+$$H^n\cdot H=\begin{pmatrix}
 0 & \dots & 1 & 0 & 0 & \dots & 0 \\
 0 & \dots & 0 & 1 & 0 & \dots & 0 \\
 0 & \dots & 0 & 0 & 1 & \dots & 0 \\
@@ -510,7 +510,7 @@ $$H^n=\begin{pmatrix}
 0 & \dots & 0 & 0 & 0 & \dots & 0 \\
 \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
 0 & \dots & 0 & 0 & 0 & \dots & 0
-\end{pmatrix}=H^{n-1}$$
+\end{pmatrix}=H^{n+1}$$
 
 Therefore, the induction step is true, q. e. d.
 
