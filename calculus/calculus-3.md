@@ -36,7 +36,7 @@ Separate set $B$ into two intervals: $B_1 = (-\infty, a), B_2 = (a, +\infty)$. T
 
 There is always some $\varepsilon > 0$ such that $a - \varepsilon\in B_2$; therefore, similarly to tasks above, since for $a\in A, a-\varepsilon\in B, |a - (a - \varepsilon)| = \varepsilon$. Since the distance (without the infinum just yet) is equal to $\varepsilon$, then out of all upper bounds, the smallest would be $0\Rightarrow d(A, B) := \inf_{x\in A, y\in B}|x-y| = 0$. We have found such an example, q. e. d.
 
-**Answer: no :(**
+**Answer: yes :)**
 
 ## Problem 4
 
