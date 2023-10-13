@@ -141,7 +141,7 @@ $$x_n=\frac{n^2}{n^2+1}\cos\frac{2\pi n}{3}$$
 First of all, state the following for $n\in\mathbb{N}$:
 
 * $\cos\left(\frac{2\pi}{3}+2\pi n\right)=\cos\left(\frac{4\pi}{3}+2\pi n\right)$
-  * Therefore, if $n \hspace{-4px} \mod 3 \neq 0$, then we get the first subsequence $x_{(1)n}=\frac{n^2}{n^2+1}\cos\frac{2\pi}{3}=\frac{1}{2}\frac{n^2}{n^2+1}$
+  * Therefore, if $n \hspace{-4px} \mod 3 \neq 0$, then we get the first subsequence $x_{(1)n}=\frac{n^2}{n^2+1}\cos\frac{2\pi}{3}=-\frac{1}{2}\frac{n^2}{n^2+1}$
 * $\cos(2\pi n) = 1$
   * In this case, if $n \hspace{-4px} \mod 3 = 0$, then we get the second subsequence $x_{(2)n}=\frac{n^2}{n^2+1}\cos(0)=\frac{n^2}{n^2+1}$
 
@@ -151,13 +151,13 @@ $$\{x_{(2)n}\}\lim_{x\to\infty}\frac{n^2}{n^2+1}=\lim_{x\to\infty}\frac{1}{1+\fr
 
 Using limit arithmetic, calculate the limit of the first subsequence:
 
-$$\lim_{x\to\infty}\{x_{(1)n}\}=\lim_{x\to\infty}\frac{1}{2}\frac{n^2}{n^2+1}=\frac{1}{2}\lim_{x\to\infty}\{x_{(2)n}\}=\frac{1}{2}$$
+$$\lim_{x\to\infty}\{x_{(1)n}\}=\lim_{x\to\infty}-\frac{1}{2}\frac{n^2}{n^2+1}=-\frac{1}{2}\lim_{x\to\infty}\{x_{(2)n}\}=-\frac{1}{2}$$
 
 Therefore, choose corresponding values from the partial limits and get the answer:
 
 Answer:
 
-$$\lim\sup x_n=1, \ \ \lim\inf x_n = \frac{1}{2}$$
+$$\lim\sup x_n=1, \ \ \lim\inf x_n = -\frac{1}{2}$$
 
 ### Subproblem B
 
