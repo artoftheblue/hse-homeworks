@@ -1,3 +1,3 @@
 # Lecture Notes
 
-Hello! Click on the files in this folder to view them
+Hello! Click on the respective pdf files above to view the lecture notes. 
