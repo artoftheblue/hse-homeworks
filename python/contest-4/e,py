@@ -1,0 +1,13 @@
+import sys
+
+def mod_powers(a, n):
+    yield 1
+    k = 1
+    while True:
+        next_value = a ** k % n
+        yield next_value
+        if next_value == 1:
+            return
+        k += 1
+    
+exec(sys.stdin.read())
