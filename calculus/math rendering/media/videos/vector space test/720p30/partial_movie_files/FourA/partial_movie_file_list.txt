@@ -1,0 +1,3 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/Artyom/Desktop/media/videos/vector space test/720p30/partial_movie_files/FourA/274514146_2781272714_3457468996.mp4'
+file 'file:C:/Users/Artyom/Desktop/media/videos/vector space test/720p30/partial_movie_files/FourA/2789044632_1076466279_2774785785.mp4'

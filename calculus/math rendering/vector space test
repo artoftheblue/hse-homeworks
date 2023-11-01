@@ -1,0 +1,16 @@
+#manim -pqm "vector space test" LinearTransformationSceneExample
+
+from manim import *
+
+class LinearTransformationSceneExample(LinearTransformationScene):
+    def __init__(self):
+        LinearTransformationScene.__init__(
+            self,
+            show_coordinates=True,
+            leave_ghost_vectors=True,
+        )
+
+    def construct(self):
+        matrix = [[1, 2], [3, 4]]
+        self.apply_matrix(matrix)
+        self.wait()
