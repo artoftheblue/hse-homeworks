@@ -86,9 +86,17 @@ Using a recursive approach, calculate the number of words of length $n$, startin
 |$f(2)$|$4$|
 |$f(3)$|$8$|
 
-Further, for values greater than $3$, let's consider how the words are derived from the previous iteration. Out of the possible words of length $3$, there would be a single option to get $1100$ through machinations, adding $0$ to the word $110$. For words of length $4$, there would be two options to get a word that corresponds to the pattern $*1100$, either from $0110$ or from $1110$, and so on. Effectively, we take the number of words with one letter less ($n-1$), multiply this number by two and subtract all the words of length ($n-4$).
+Further, for values greater than $3$, let's consider how the words are derived from the previous iteration. From the possible words of length $3$, there would be a single option to get $1100$ through machinations, adding $0$ to the word $110$. For words of length $4$, there would be two options to get a word that corresponds to the pattern $*1100$, either from $0110$ or from $1110$, and so on. Effectively, we take the number of words with one letter less ($n-1$), multiply this number by two and subtract all the words of length ($n-4$):
 
-Thus, the recursive formula to get the number of words that do not have the subword $1100$ inside of them is:
+For all further iterations, to get the number of valid words of a certain length, all words that end with $110$ have to be counted and subtracted from the total once since the action below is invalid. This corresponds to the number of words that are $3$ letters shorter (because if all words denoted by asterisks are valid, then it's only possible to get an invalid word if we were to add $0$ to the end of a word that ends with $110$). Example:
+
+$$\underbrace{*}_{f(1)}110 \xrightarrow{+0} \underbrace{*}_{f(1)}1100$$
+
+$$\underbrace{*******}_{f(7)}\ 110 \xrightarrow{+0} \underbrace{*******}_{f(7)}\ 1100$$
+
+This is a single case, only when we add $0$ to the end of words that end with $110$ and start with words of length $(n-4)$, thus the number of such words that have to be subtracted is $f(n-4)$. 
+
+The recursive formula to get the number of words that do not have the subword $1100$ inside of them is:
 
     def f(n: int):
       if n < 0:
