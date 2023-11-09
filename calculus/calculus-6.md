@@ -54,6 +54,10 @@ For $y=0$:
 
 $$\lim_{x\to0}\frac{x^20^2}{x^20^2+(x-0)^2}=\lim_{x\to0}\frac{0}{x^2}=\lim_{x\to0}0=0$$
 
+This should be enough, but in case you can't go along $y=0$, a different option for $y=kx, k\neq1$:
+
+$$\lim_{x\to0}\frac{k^2x^4}{k^2x^4+(1-k)^2x^2}=\lim_{x\to0}\frac{x^2}{x^2+\frac{(1-k)^2}{k^2}}=\lim_{x\to0}\frac{0}{0+\frac{(1-k)^2}{k^2}}=0$$
+
 There are at least two different limits for two paths $y=x, y=0 \Rightarrow$ the limit does not exist.
 
 ### Subproblem E
