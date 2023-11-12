@@ -12,7 +12,7 @@ $$\displaystyle \lim_{\substack{x\to0\\ y\to0}}\frac{x^3-y}{x^3+y}$$
 
 For $y=mx^3$:
 
-$$\lim_{x\to0}\frac{x^3-m^3x^3}{x^3+m^3x^3}=\lim_{x\to0}\frac{1-m^3}{1+m^3}=\frac{1-m^3}{1+m^3}$$
+$$\lim_{x\to0}\frac{x^3-mx^3}{x^3+mx^3}=\lim_{x\to0}\frac{1-m}{1+m}=\frac{1-m}{1+m}$$
 
 The limit is dependent on $m \Rightarrow$ the limit does not exist.
 
@@ -84,7 +84,7 @@ $$\lim_{\substack{x\to0\\ y\to0}}\frac{y-2x^2}{y-x^2}\Rightarrow\lim_{t\to0}\fra
 
 For $y = mx^2$:
 
-$$\lim_{x\to0}\frac{mx^2-2x^2}{mx^2-x^2}=\lim_{x\to0}\frac{m-2}{m}=\frac{m-2}{m}$$
+$$\lim_{x\to0}\frac{mx^2-2x^2}{mx^2-x^2}=\lim_{x\to0}\frac{m-2}{m-1}=\frac{m-2}{m-1}$$
 
 Thus, the multivariable limit does not exist.
 
@@ -107,6 +107,6 @@ continuous in point $(0,0)$?
 
 $$u'(x, y)=\frac{xy}{x^2+y^2}$$
 
-Per the continuity criterion: for $u(x,y)$ to be continuous in point of closure $(0,0)$ it is required and sufficient that $u(0,0)=\lim_{\substack{x \to 0\\y\to0}}u'(x, y).$ This limit of $u'(x,y)$, as proven in **Problem 8.8, Subproblem B** does not exist. Therefore, the function $u(x,y)$ is not continuous.
+Per the continuity criterion: for $u(x,y)$ to be continuous in point of closure $(0,0)$ it is required and sufficient that $u(0,0)=\lim_{\substack{x \to 0\\y\to0}}u'(x, y).$ This limit of $u'(x,y)$, as proven in **Problem 8.8, Subproblem B** does not exist and **takes different values depending on the path**. Therefore, $(0,0)$ is not the point of closure and the function $u(x,y)$ is not continuous.
 
 Answer: $u(x,y)$ is not continuous
