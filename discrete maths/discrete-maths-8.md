@@ -10,17 +10,11 @@ Is it true that if $|A \setminus B | = |B \setminus A|$, then $|A|=|B|$?
 
 ---
 
-Since $A = A \setminus B \cup (A \cap B)$ and $B = B \setminus A \cup (B \cap A)$, then
+Since $A \setminus B = A \setminus (A \cap B)$ and $B \setminus A = B \setminus (B \cap A)$, then since the intersection operation is commutative and it is given that $|A \setminus B| = |B \setminus A|$, then
 
-$$|A| = |A \setminus B| + |A \cap B|$$
+$$|A \setminus B| = |A \setminus (A \cap B)| = |B \setminus (A \cap B)| = |B \setminus A|$$
 
-$$|B| = |B \setminus A| + |B \cap A|$$
-
-Since the intersection operation is commutative and it is given that $|A \setminus B | = |B \setminus A|$, then
-
-$$|A| = |A \setminus B| + |A \cap B| = |B \setminus A| + |B \cap A| = |B|$$
-
-q. e. d.
+When it is possible that $|A \setminus (A \cap B)| = |B \setminus (A \cap B)|$? Since we remove a constant set from both sets and get an equality, then $A$ and $B$ are of the same cardinality: $|A|=|B|$, q. e. d.
 
 **Answer: yes, it is true.**
 
@@ -32,19 +26,21 @@ Is it true that if $|A| = |C|, |B| = |D|, B \subseteq A, D \subseteq C$, then $|
 
 $$|A| = |C|$$
 
-$$|A| - |B| = |C| - |B|$$
+Subtract the same set from each of the sets:
+
+$$|A\setminus B| = |C\setminus B|$$
 
 Since $|B| = |D|$,
 
-$$|A| - |B| = |C| - |D|$$
+$$|A \setminus B| = |C\setminus D|$$
 
-$$|A| - |A \cap B| - |B \setminus A| = |C| - |C \cap D| - |D \setminus C|$$
+$$|A\setminus (A \cap B) \setminus (B \setminus A)| = |C\setminus (C \cap D)\setminus (D \setminus C)|$$
 
 Since $B \subseteq A, D \subseteq C$, then $|B \setminus A| = |D \setminus C|=|\{\varnothing\}|=0$ and $A \cap B = B, C \cap D = D$.
 
-$$|A| - |A \cap B| - 0 = |C| - |C \cap D| - 0$$
+$$|A\setminus (A \cap B)| - 0 = |C\setminus (C \cap D)| - 0$$
 
-$$|A \setminus A \cap B| = |C \setminus C \cap D|$$
+$$|A \setminus (A \cap B)| = |C \setminus (C \cap D)|$$
 
 $$|A \setminus B| = |C \setminus D|$$
 
