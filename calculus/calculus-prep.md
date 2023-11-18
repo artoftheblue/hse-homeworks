@@ -4,9 +4,13 @@ Estimate:
 
 $$\frac{3n^3+n\sin(n^2)+\ln n}{n^3+n^2+\cos(n)}<\frac{3n^3+2n}{n^3-1}=3+\frac{2n+3}{n^3-1}<\varepsilon$$
 
-Obviously, this is not true, but it would be true if the limit is equal to $3$, therefore check this terrifying thing (it is very difficult to create a function from here so I'm not going to do it)
+Obviously, this is not true, but it would be true if the limit is equal to $3$, therefore
 
 $$\frac{2n+3}{n^3-1}<\varepsilon$$
+
+Very roughly estimating:
+
+$$\frac{3}{n^2}<\varepsilon\Rightarrow N=\left\lfloor\sqrt{\frac{3}{\varepsilon}}\right\rfloor$$
 
 ## Problem 2
 
