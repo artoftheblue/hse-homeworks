@@ -49,9 +49,9 @@ $$\lim_{x\to1}\frac{\sin\frac{\pi x}{2}}{x}=1$$
 
 $$\lim_{x\to0}\frac{\tg x+\tg 2x+\dots + \tg nx}{\arctg x}=\lim_{x\to0}\sum^n_{k=1}\frac{\tg kx}{\arctg x}$$
 
-> Since $\tg x = x + O(x)$ and $\arctg x = x + O(x)$, then
+> Since $\tg x = x + o(x)$ and $\arctg x = x + o(x)$, then
 
-$$\lim_{x\to0}\frac{\tg kx}{\arctg x}=\lim_{x\to0}\frac{kx + O(x)}{x+O(x)}=\lim_{x\to0}(k+O(1))=k$$
+$$\lim_{x\to0}\frac{\tg kx}{\arctg x}=\lim_{x\to0}\frac{kx + o(x)}{x+o(x)}=\lim_{x\to0}(k+o(1))=k$$
 
 > Alternatively, since $\displaystyle\lim_{x\to0}\frac{\tg x}{x}=\lim_{x\to0}\frac{\arctg x}{x}=1$
 > $$\lim_{x\to0}\frac{\tg kx}{\arctg x}=\lim_{x\to0}\frac{kx\tg kx}{kx\arctg x}=k\lim_{x\to0}\frac{\tg kx}{kx}\lim_{x\to0}\frac{x}{\arctg x}=k\times1\times1^{-1}=k$$
@@ -68,11 +68,11 @@ $$\lim_{x\to0}\frac{\tg x+\tg 2x+\dots + \tg nx}{\arctg x}=\frac{n(n+1)}{2}$$
 
 $$\lim_{x\to0}\frac{\tg x - \sin x}{\sin^3x}=\lim_{x\to0}\frac{\sin x - \sin x\cos x}{\sin^3x\cos x}=\lim_{x\to0}\frac{1 - \cos x}{\sin^2x\cos x}=$$
 
-> Since $1 - \cos x=2\sin^2\frac{x}{2}, \sin x\cos x=\frac{1}{2}\sin 2x, \sin x = x + O(x)$, then:
+> Since $1 - \cos x=2\sin^2\frac{x}{2}, \sin x\cos x=\frac{1}{2}\sin 2x, \sin x = x + o(x)$, then:
 
-$$\lim_{x\to0}\frac{2\sin^2\frac{x}{2}}{\frac{1}{2}\sin 2x\sin x}=\lim_{x\to0}\frac{2(\frac{x}{2}+O(x))^2}{\frac{1}{2}(2x+O(x))(x + O(x))}=4\lim_{x\to0}\frac{\frac{x^2}{4}+\frac{x}{2}O(x)+O(x^2)}{2x^2+2xO(x)+xO(x)+ O(x^2)}=$$
+$$\lim_{x\to0}\frac{2\sin^2\frac{x}{2}}{\frac{1}{2}\sin 2x\sin x}=\lim_{x\to0}\frac{2(\frac{x}{2}+o(x))^2}{\frac{1}{2}(2x+o(x))(x + o(x))}=4\lim_{x\to0}\frac{\frac{x^2}{4}+xo(x)+o(x^2)}{2x^2+2xo(x)+xo(x)+ o(x^2)}=$$
 
-$$4\lim_{x\to0}\frac{\frac{x^2}{4}+O(x^2)}{2x^2+O(x^2)}=\frac{4}{8}\lim_{x\to0}\frac{x^2+O(x^2)}{x^2+O(x^2)}=\frac{1}{2}$$
+$$4\lim_{x\to0}\frac{\frac{x^2}{4}+o(x^2)}{2x^2+o(x^2)}=\frac{4}{8}\lim_{x\to0}\frac{x^2+o(x^2)}{x^2+o(x^2)}=\frac{1}{2}$$
 
 > Alternatively, since $\displaystyle\lim_{x\to0}\frac{\sin x}{x}=1$
 > $$\lim_{x\to0}\frac{2\sin^2\frac{x}{2}}{\frac{1}{2}\sin 2x\sin x}=\frac{1}{2}\lim_{x\to0}\frac{\sin^2\frac{x}{2}}{\frac{x^2}{2^2}}\frac{x}{\sin x}\frac{2x}{\sin 2x}=\frac{1}{2}\times1^2\times1^{-1}\times1^{-1}=\frac{1}{2}$$
@@ -85,9 +85,9 @@ $$\lim_{x\to0}\frac{\tg x - \sin x}{\sin^3x}=\frac{1}{2}$$
 
 $$\lim_{x\to a}\frac{\sin x - \sin a}{x-a}=\lim_{x\to a}\frac{2\sin\frac{x-a}{2}\cos\frac{x+a}{2}}{x-a}\xRightarrow{z=x-a}\lim_{z\to 0}\frac{2\sin\frac{z}{2}\cos(\frac{z}{2}+a)}{z}=$$
 
-$$\lim_{z\to 0}\frac{2(\frac{z}{2}+O(z))\cos(\frac{z}{2}+a)}{z}=\lim_{z\to 0}\frac{(z+O(z))\cos(\frac{z}{2}+a)}{z}=$$
+$$\lim_{z\to 0}\frac{2(\frac{z}{2}+o(z))\cos(\frac{z}{2}+a)}{z}=\lim_{z\to 0}\frac{(z+o(z))\cos(\frac{z}{2}+a)}{z}=$$
 
-$$\lim_{z\to 0}\frac{z\cos(\frac{z}{2}+a)+O(z)\cos(\frac{z}{2}+a)}{z}=\lim_{z\to 0}\left(\cos\left(\frac{z}{2}+a\right)+O(1)\cos\left(\frac{z}{2}+a\right)\right)=$$
+$$\lim_{z\to 0}\frac{z\cos(\frac{z}{2}+a)+o(z)\cos(\frac{z}{2}+a)}{z}=\lim_{z\to 0}\left(\cos\left(\frac{z}{2}+a\right)+o(1)\cos\left(\frac{z}{2}+a\right)\right)=$$
 
 $$\cos\left(\frac{0}{2}+a\right)+0=\cos(a)$$
 
@@ -102,13 +102,13 @@ $$\lim_{x\to a}\frac{\sin x - \sin a}{x-a}=\cos(a)$$
 
 $$\lim_{x\to 1}\frac{\ln(x^2+\cos\frac{\pi x}{2})}{\sqrt{x} - 1}=\lim_{y\to 0}\frac{\ln((y+1)^2+\cos(\frac{\pi y}{2}+\frac{\pi}{2}))}{\sqrt{y+1} - 1}=$$
 
-> Since $\displaystyle\cos x = -\sin\left(x+\frac{\pi}{2}\right), \sin x = x - \frac{x^3}{6}+ O(x^3)$
+> Since $\displaystyle\cos x = -\sin\left(x+\frac{\pi}{2}\right), \sin x = x - \frac{x^3}{6}+ o(x^3)$
 
-$$\lim_{y\to 0}\frac{\ln((y+1)^2-\sin\frac{\pi y}{2})}{\sqrt{y+1} - 1}=\lim_{y\to 0}\frac{\ln((y+1)^2-\frac{\pi y}{2}+\frac{\pi^3 y^3}{8}+O(y^3))}{\sqrt{y+1} - 1}=\lim_{y\to 0}\frac{\ln(1+y^2+(2-\frac{\pi}{2})y+\frac{\pi^3 y^3}{8}+O(y^3))}{\sqrt{y+1} - 1}=$$
+$$\lim_{y\to 0}\frac{\ln((y+1)^2-\sin\frac{\pi y}{2})}{\sqrt{y+1} - 1}=\lim_{y\to 0}\frac{\ln((y+1)^2-\frac{\pi y}{2}+\frac{\pi^3 y^3}{8}+o(y^3))}{\sqrt{y+1} - 1}=\lim_{y\to 0}\frac{\ln(1+y^2+(2-\frac{\pi}{2})y+\frac{\pi^3 y^3}{8}+o(y^3))}{\sqrt{y+1} - 1}=$$
 
-> Since $\displaystyle\sqrt{1+x}=1+\frac{x}{2}-\frac{x^2}{8}+\frac{x^3}{16}+O(x^3), \ln(1+x) = x + O(x)$
+> Since $\displaystyle\sqrt{1+x}=1+\frac{x}{2}-\frac{x^2}{8}+\frac{x^3}{16}+o(x^3), \ln(1+x) = x + o(x)$
 
-$$\lim_{y\to 0}\frac{y^2+(2-\frac{\pi}{2})y+\frac{\pi^3 y^3}{8}+O(y^3)}{1+\frac{y}{2}-\frac{y^2}{8} +\frac{y^3}{16}-1+O(y^3)}=\lim_{y\to 0}\frac{y+(2-\frac{\pi}{2})+\frac{\pi^3 y^2}{8}+O(y^2)}{\frac{1}{2}-\frac{y}{8}+\frac{y^2}{16}+O(y^2)}=\frac{0+(2-\frac{\pi}{2})+0+0}{\frac{1}{2}-0+0+0}=4-\pi$$
+$$\lim_{y\to 0}\frac{y^2+(2-\frac{\pi}{2})y+\frac{\pi^3 y^3}{8}+o(y^3)}{1+\frac{y}{2}-\frac{y^2}{8} +\frac{y^3}{16}-1+o(y^3)}=\lim_{y\to 0}\frac{y+(2-\frac{\pi}{2})+\frac{\pi^3 y^2}{8}+o(y^2)}{\frac{1}{2}-\frac{y}{8}+\frac{y^2}{16}+o(y^2)}=\frac{0+(2-\frac{\pi}{2})+0+0}{\frac{1}{2}-0+0+0}=4-\pi$$
 
 > Alternatively, since $\displaystyle\lim_{x\to0}\frac{(y+1)^\alpha-1}{y}=\alpha,\lim_{x\to0}\frac{\sin x}{x}=1$
 > $$\lim_{y\to 0}\frac{\ln((y+1)^2-\sin\frac{\pi y}{2})}{\sqrt{y+1} - 1}=\lim_{y\to0}\frac{y}{(y+1)^\frac{1}{2}-1}\frac{(y+2-\frac{\pi}{2}\frac{\sin\frac{\pi y}{2}}{\frac{\pi y}{2}})\ln(1+y(y+2-\frac{\pi}{2}\frac{\sin\frac{\pi y}{2}}{\frac{\pi y}{2}}))}{(y+2-\frac{\pi}{2}\frac{\sin\frac{\pi y}{2}}{\frac{\pi y}{2}})y}=$$
@@ -123,9 +123,9 @@ $$\lim_{x\to 1}\frac{\ln(x^2+\cos\frac{\pi x}{2})}{\sqrt{x} - 1}=4-\pi$$
 
 $$\lim_{x\to+0}\frac{\sqrt{1-e^{-x}}-\sqrt{1-\cos x}}{\sqrt{\sin x}}=\lim_{x\to+0}\frac{\sqrt{1-e^{-x}}}{\sqrt{\sin x}}-\lim_{x\to+0}\frac{\sqrt{1-\cos x}}{\sqrt{\sin x}}$$
 
-> Since $e^x = 1 + x + O(x), \sin x = x + O(x)$
+> Since $e^x = 1 + x + o(x), \sin x = x + o(x)$
 
-$$\lim_{x\to+0}\frac{\sqrt{1-e^{-x}}}{\sqrt{\sin x}}=\lim_{x\to+0}\sqrt{\frac{1-1 + x + O(x)}{x+O(x)}}=\lim_{x\to+0}\sqrt{\frac{x + O(x)}{x+O(x)}}=1$$
+$$\lim_{x\to+0}\frac{\sqrt{1-e^{-x}}}{\sqrt{\sin x}}=\lim_{x\to+0}\sqrt{\frac{1-1 + x + o(x)}{x+o(x)}}=\lim_{x\to+0}\sqrt{\frac{x + o(x)}{x+o(x)}}=1$$
 
 > Alternatively, since $\displaystyle\lim_{x\to0}\frac{e^x-1}{x}=1$
 > $$\lim_{x\to+0}\sqrt{\frac{1-e^{-x}}{\sin x}}=\lim_{x\to+0}\sqrt{\frac{x(e^{-x}-1)}{x\sin x}}=\lim_{x\to+0}\sqrt{\frac{(e^{-x}-1)}{x}\frac{x}{\sin x}}=\sqrt{1\times1^{-1}}=1$$
@@ -148,11 +148,11 @@ $$\lim_{x\to+0}\frac{\sqrt{1-e^{-x}}-\sqrt{1-\cos x}}{\sqrt{\sin x}}=1$$
 
 $$\lim_{x\to1}\frac{\ln(2x^2-x)}{\ln(x^4+x^2-x)}=\lim_{x\to1}\frac{\ln x+\ln(2x-1)}{\ln x+\ln(x^3+x-1)}\xRightarrow{x=y+1}\lim_{y\to0}\frac{\ln(y+1)+\ln(2y+1)}{\ln(y+1)+\ln((y+1)^3+y+1-1)}=$$
 
-> Since $\displaystyle\ln(x+1)=x-\frac{x^2}{2}+\frac{x^3}{3}+O(x^3)$ and $\ln(x+1)=x+O(x)$
+> Since $\displaystyle\ln(x+1)=x-\frac{x^2}{2}+\frac{x^3}{3}+o(x^3)$ and $\ln(x+1)=x+o(x)$
 
-$$\lim_{y\to0}\frac{\ln(y+1)+\ln(2y+1)}{\ln(y+1)+\ln(y^3+3y^2+4y+1)}=\lim_{y\to0}\frac{y-\frac{y^2}{2}+\frac{y^3}{3}+O(y^3) + 2y-2y^2+\frac{8y^3}{3}+O(y^3)}{y-\frac{y^2}{2}+\frac{y^3}{3}+O(y^3)+y^3+3y^2+4y+O(y^3)}=$$
+$$\lim_{y\to0}\frac{\ln(y+1)+\ln(2y+1)}{\ln(y+1)+\ln(y^3+3y^2+4y+1)}=\lim_{y\to0}\frac{y-\frac{y^2}{2}+\frac{y^3}{3}+o(y^3) + 2y-2y^2+\frac{8y^3}{3}+o(y^3)}{y-\frac{y^2}{2}+\frac{y^3}{3}+o(y^3)+y^3+3y^2+4y+o(y^3)}=$$
 
-$$\lim_{y\to0}\frac{3y-\frac{5y^2}{2}+3y^3+O(y^3)}{5y+\frac{5y^2}{2}+\frac{4y^3}{3}+O(y^3)}=\lim_{y\to0}\frac{3-\frac{5y}{2}+3y^2+O(y^2)}{5+\frac{5y}{2}+\frac{4y^2}{3}+O(y^2)}=\frac{3-0+0+0}{5+0+0+0}=\frac{3}{5}$$
+$$\lim_{y\to0}\frac{3y-\frac{5y^2}{2}+3y^3+o(y^3)}{5y+\frac{5y^2}{2}+\frac{4y^3}{3}+o(y^3)}=\lim_{y\to0}\frac{3-\frac{5y}{2}+3y^2+o(y^2)}{5+\frac{5y}{2}+\frac{4y^2}{3}+o(y^2)}=\frac{3-0+0+0}{5+0+0+0}=\frac{3}{5}$$
 
 > Alternatively, since $\displaystyle \lim_{x\to0}\frac{\ln(1+x)}{x}=1$
 > $$\lim_{y\to0}\frac{\frac{y\ln(y+1)}{y}+\frac{2y\ln(2y+1)}{2y}}{\frac{y\ln(y+1)}{y}+\frac{(y^3+3y^2+4y)\ln(y^3+3y^2+4y+1)}{y^3+3y^2+4y}}=\lim_{y\to0}\frac{y+2y}{y+y^3+3y^2+4y}=\lim_{y\to0}\frac{3}{5+y^2+3y}=\frac{3}{5}$$
