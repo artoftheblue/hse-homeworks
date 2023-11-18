@@ -153,12 +153,12 @@ $$|\mathcal{P}(\mathbb{R})|=|\{0,1\}^\mathbb{R}|\leq|\mathbb{R^R}|\leq|\mathcal{
 $$|\mathcal{P}(\mathbb{R})|\leq|\mathbb{R^R}|\leq|\mathcal{P}(\mathbb{R})|$$
 
 Awesome, therefore,
-
+ 
 $$|\mathcal{P}(\mathbb{R})|\leq|\mathbb{R^R}|\leq|\mathcal{P}(\mathbb{R})|\Rightarrow|\mathcal{P}(\mathbb{R})|=|\{f \ | \ f\colon \mathbb{R \mapsto R}\}|$$
 
-Since $|\mathcal{P}(\mathbb{R})|$ has the cardinality of the continuum, the required set also has the cardinality of the continuum, q. e. d.
+Since $|\{0,1\}^\mathbb{N}| < |\{0,1\}^\mathbb{R}| = |\mathcal{P}(\mathbb{R})|$, it has the cardinality more that the one of the continuum, thus the required set also has the cardinality **more than the one of the continuum**, q. e. d.
 
-**Answer:** yes
+**Answer:** no
 
 ## Problem 4
 
