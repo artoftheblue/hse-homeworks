@@ -1,0 +1,10 @@
+n, l = map(int, input().split())
+w = [int(i) for i in input().split()]
+w = [w[i] * l + i for i in range(len(w))]
+
+ans = 0
+
+def merge(a: list, b: list) -> list:
+    a = a[::-1]
+    b = b[::-1]
+    while

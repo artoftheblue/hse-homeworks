@@ -1,0 +1,26 @@
+def gcd_extended(a: int, b: int) -> int: 
+    if a == 0 : 
+        return b, 0, 1
+             
+    gcd, d, c = gcd_extended(b % a, a) 
+    return gcd, c - (b // a) * d, d 
+
+def sign(x: int) -> int:
+    if x < 0:
+        return -1
+    return 1
+
+def get_diophantine_solution(a: int, b: int, c: int) -> int:
+    gcd, x, y = gcd_extended(abs(a), abs(b))
+    print(gcd, x, y)
+    
+    if c % gcd == 0:
+        return 0, 0
+    
+    x = x * c // gcd
+    y = y * c // gcd 
+    
+    return sign(a) * x, sign(b) * y
+
+for i in range(int(input())):
+    print(get_diophantine_solution(*map(int, input().split())))
