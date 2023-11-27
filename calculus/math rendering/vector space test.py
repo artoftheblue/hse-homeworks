@@ -45,3 +45,9 @@ class FourC(Base):
     def func(self, dot):
         x, y, z = dot
         return (max(x, y), 0, z)
+
+class Seminar(Base):
+    def func(self, dot):
+        x, y, z = dot
+        k = 0.1
+        return (k * (x + y), k * (x ** 2 + y ** 2), k * z)

@@ -19,32 +19,34 @@ def power(a: int, n: int) -> int:
 def div(a: int, b: int) -> int:
     return mul(a, power(b, MOD - 2)) % MOD
 
-def gcd_extended(a: int, b: int) -> int: 
-    if a == 0 : 
-        return b, 0, 1
+def gcd_extended(b: int, a: int) -> int: 
+    if a == 0: 
+        return b, 1, 0
              
-    gcd, d, c = gcd_extended(b % a, a) 
-    return gcd, c - (b // a) * d, d 
+    gcd, d, c = gcd_extended(a, b % a) 
+    return gcd, c, d - (b // a) * c
 
 def get_inverse(a: int) -> int:
     gcd, z, _ = gcd_extended(a, MOD)
-    #print(gcd)
     
-    if gcd != 1:
+    if gcd == 1:
         return -1
     return z % MOD
 
 def main(a: int, n: int) -> int:
-    res = 0
+    gcd, x, _ = gcd_extended(a, MOD)
+    
+    if gcd != 1:
+        return -1
+    
+    result = 0
+    temp1 = sum(x, MOD)
+    temp2 = temp1
+    
     for i in range(1, n + 1):
-        p = power(a, i)
-        inv = get_inverse(p)
-        
-        if inv == -1:
-            return -1
-        
-        res = sum(res, mul(i, inv))
-    return res
+        result = sum(result, mul(i, temp1))
+        temp1 = mul(temp1, temp2)
+    return result
 
 a, n, MOD = map(int, input().split())
 print(main(a, n))

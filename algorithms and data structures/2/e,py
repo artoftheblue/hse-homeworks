@@ -1,26 +1,40 @@
-def gcd_extended(a: int, b: int) -> int: 
-    if a == 0 : 
-        return b, 0, 1
-             
-    gcd, d, c = gcd_extended(b % a, a) 
-    return gcd, c - (b // a) * d, d 
+from math import ceil
 
-def sign(x: int) -> int:
-    if x < 0:
-        return -1
-    return 1
+def gcd_extended(b: int, a: int) -> int: 
+    if a == 0: 
+        return b, 1, 0
+             
+    gcd, d, c = gcd_extended(a, b % a) 
+    return gcd, c, d - (b // a) * c
 
 def get_diophantine_solution(a: int, b: int, c: int) -> int:
-    gcd, x, y = gcd_extended(abs(a), abs(b))
-    print(gcd, x, y)
+    gcd, x, y = gcd_extended(a, b)
+    #print(gcd, x, y)
     
-    if c % gcd == 0:
+    if c % gcd != 0:
         return 0, 0
     
-    x = x * c // gcd
-    y = y * c // gcd 
+    q_a = b // gcd
+    q_b = a // gcd 
     
-    return sign(a) * x, sign(b) * y
+    x *= (c // gcd)
+    y *= (c // gcd)
+    
+    if x >= 0:
+        k = x // q_a 
+        x = x - k * q_a
+        y = y + k * q_b
+            
+        #print(q_a, q_b, k)
+        return x, y
+    
+    #print(x, b)
+    k = ceil(-x / q_a)
+    x = x + k * q_a
+    y = y - k * q_b
+        
+    #print(q_a, q_b, k)
+    return x, y
 
 for i in range(int(input())):
-    print(get_diophantine_solution(*map(int, input().split())))
+    print(*get_diophantine_solution(*map(int, input().split())))
