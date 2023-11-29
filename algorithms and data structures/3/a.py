@@ -11,4 +11,4 @@ for line in text:
 
 for index in [9, 10, 11]:
     for line in data[index]:
-        print(index, line)    
+        print(index, line)
