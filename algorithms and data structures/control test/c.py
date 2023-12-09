@@ -10,7 +10,7 @@ def lorries(n: int, k: int) -> int:
             else:
                 temp.append(i)
         stacks = temp.copy()
-        #print(stacks)
+        print(stacks)
         if all(i <= k for i in temp):
             return len(stacks)
 
