@@ -51,3 +51,23 @@ class Seminar(Base):
         x, y, z = dot
         k = 0.1
         return (k * (x + y), k * (x ** 2 + y ** 2), k * z)
+
+class Test(LinearTransformationScene, ThreeDScene):
+    def construct(self, **kwargs):
+        LinearTransformationScene.__init__(
+                    self,
+                    show_basis_vectors = False,
+                    *kwargs
+                    )
+        self.set_camera_orientation(phi=75 * DEGREES, theta=-45 * DEGREES)
+        self.apply_nonlinear_transformation(self.func)
+        self.wait(1)
+        self.begin_ambient_camera_rotation(rate=-0.30)
+        self.wait(10)
+        self.stop_ambient_camera_rotation()
+
+    def func(self, dot):
+        x, y, z = dot
+        if (y == z == 0):
+            return (x, x ** 2, x ** 3)
+        return (x, y, z)
