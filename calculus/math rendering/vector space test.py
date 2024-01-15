@@ -1,7 +1,7 @@
 #manim -pqm "vector space test.py" transformation
 
 from manim import *
-from math import sin, cos
+from math import sin, cos, exp
 
 class Base(LinearTransformationScene):
     def construct(self):
@@ -71,3 +71,28 @@ class Test(LinearTransformationScene, ThreeDScene):
         if (y == z == 0):
             return (x, x ** 2, x ** 3)
         return (x, y, z)
+
+class Lab(Base):
+    def func(self, dot):
+        x, y, z = dot
+        return (x + sin(y), y + sin(x), z)
+
+class another(Base):
+    def func(self, dot):
+        x, y, z = dot
+        return (x + y, x * y, z)
+
+
+class SizingAndSpacing(Scene):
+    def construct(self):
+        print(UR, LEFT)
+        #func = lambda pos: (np.sin(pos[0] / 2) * UR + np.cos(pos[1] / 2) * LEFT)
+        func = lambda pos: RIGHT * np.exp(pos[0]) + UP
+        vf = ArrowVectorField(func, x_range=[-7, 7, 1])
+        self.add(vf)
+        self.wait()
+
+        length_func = lambda x: x / 3
+        vf2 = ArrowVectorField(func, x_range=[-7, 7, 1], length_func=length_func)
+        self.play(vf.animate.become(vf2))
+        self.wait()

@@ -1,0 +1,4 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/Artyom/Documents/GitHub/hse-homeworks/calculus/math rendering/media/videos/vector space test/720p30/partial_movie_files/SizingAndSpacing/274514146_3315967912_2850624742.mp4'
+file 'file:C:/Users/Artyom/Documents/GitHub/hse-homeworks/calculus/math rendering/media/videos/vector space test/720p30/partial_movie_files/SizingAndSpacing/2789044632_3615348437_4146849542.mp4'
+file 'file:C:/Users/Artyom/Documents/GitHub/hse-homeworks/calculus/math rendering/media/videos/vector space test/720p30/partial_movie_files/SizingAndSpacing/2789044632_329969645_494645426.mp4'
