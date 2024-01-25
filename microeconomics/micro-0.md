@@ -175,17 +175,22 @@ $$U(6,8)=\sqrt{10\times6}+\sqrt{20\times8}\approx20.395$$
 
 $$U(5,9)=\sqrt{10\times5}+\sqrt{20\times9}\approx20.487$$
 
-Therefore, the optimal strategy to subproblem 2 is to get $b=5$ starfruit and $s=9$ blobfruit.
+Therefore, the optimal strategy to subproblem 2 is to get $s=5$ starfruit and $b=9$ blobfruit.
 
 Visualization (purple dots denote solutions in subproblem 1, with the orange dot being the optimum, whereas green dots denote solutions in subproblem 2, with the blue dot being the optimum):
 
-![Alt text](https://github.com/artoftheblue/hse-homeworks/microeconomics/image.png)
+![](image.png)
 
 ### Задача 4 (1 балл)
 
 > В решении прикрепите свою фотографию, а также напишите, разрешаете ли вы публиковать свою задачу в учебнике (если да, укажите, нужно ли указывать авторство). 
 
-![Alt text](https://github.com/artoftheblue/hse-homeworks/microeconomics/me.jpg)
+> **Notice!** I will NOT use in-line HTML to embed pictures as it is done in the guide because it is a style violatation MD033 and generally not recommended to do. 
+> 
+> Attributing the pictures themselves with a relative path to futher render a PDF is the preferred option that takes way fewer actions that I will not stop doing since I very frequently use pictures as a visual cue to my solutions and uploading them to a server like this every single time is too cumbersome to my liking.
+
+![](me.jpg)
 
 > Yes, you can publish it
+> 
 > Yes, you should attribute my authorship
