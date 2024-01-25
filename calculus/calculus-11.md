@@ -51,6 +51,32 @@ Let $GL_n(\mathbb{R})$ be $\{M\in\text{Mat}_{n\times n}(\mathbb{R})\colon\det(M)
 
 Prove that if $(n+1)$th derivative of function $f\colon\mathbb{R}\to\mathbb{R}$ is equivalent to $0$, then $f$ is a polynomial of a degree not higher than $n$.
 
+---
+
+This is relatively easily proven via induction. 
+
+**Induction base**: if $f'=0$, then the function is a constant, which is a subclass of a polynomial.
+
+**Induction hypothesis**: suppose that $f^{(n)}=0\implies f$ is a polynomial of a degree not higher than $n$.
+
+**Induction step**: now suppose that $f^{(n+1)}=0$. This implies that 
+
+$$f^{(n)}=c_n$$
+
+$$f^{(n-1)}=c_nx+c_{n-1}$$
+
+$$f^{(n-2)}=c_nx^2+c_{n-1}x+c_{n-2}$$
+
+$$\vdots$$
+
+$$f'=c_1 + c_2x+\dots+c_nx^n$$
+
+And it is certain that 
+
+$$f=c_0+c_1x+c_2x^2+\dots+c_nx^n$$
+
+which implies that for $n+1$ the function is a polynomial $\implies$ it is also a polynomial for $n$, q. e. d. 
+
 ## Problem 5
 
 How to calculate first $10$ digits of $e$?
@@ -129,10 +155,85 @@ I will not torture myself with plotting the graph, so here we go:
 
 ![Alt text](image-2.png)
 
+> In this subproblem I didn't find it necessary to study the function in terms of whether it's convex or concave since it's a basic sine wave.
+
 ### Subproblem B
 
 $$f(x)=x^{\frac{2}{3}}-(x^2-1)^\frac{1}{3}$$
 
+---
+
+Firstly, the function is symmetric along the y-axis since we square the argument (the function value would be the same for $-x$ and $x$), so I'll only consider the function on a semi-interval $[0, +\infty)$.
+
+$$f'(x)=\frac{2}{3}\frac{1}{\sqrt[3]{x}}-\frac{2}{3}\frac{x}{\sqrt[3]{x^2-1}}$$
+
+The function is non-differentiable at $0$, nor at $1$, since the denominator cannot be equal to $0$. $x=0$ is an edge case where the function is not smooth, and $x=1$ is effectively a vertical tangent line to the function (which maintains smoothness, actually, but I'll check this a bit later).
+
+The only solution in $\mathbb{R}^+$ for $f'(x)=0$ exists if:
+
+$$\frac{1}{\sqrt[3]{x}}=\frac{x}{\sqrt[3]{x^2-1}}\implies\sqrt[3]{x^2-1}=x\sqrt[3]{x}\implies x^2-1=x^4$$
+
+$$x^2=\plusmn\frac{1}{2}\implies x=\frac{1}{\sqrt{2}}$$
+
+Since for $x'>\frac{1}{\sqrt{2}} \ f'(x')$, the value is negative, then 
+
+* function is descending on $(\frac{1}{\sqrt{2}}, +\infty)$
+* function is ascending on $(0, \frac{1}{\sqrt{2}})$
+
+which implies $\sup_1f$ at $x=\frac{1}{\sqrt{2}}$
+
+The second derivative does not have any zeros and it's too terrifying to calculate/check, but it has a really fun point $(1, 1)$, where the function is not differentiable but is smooth and continuous, which implies that the entire function consist of a single concave section succeeded by a convex section. Geometrically, the graph of the second derivative goes to $-\infty$ and then emerges from $+\infty$.
+
+![Alt text](image-5.png)
+
 ### Subproblem C
 
 $$f(x)=\frac{x^2-5x+6}{x^2+1}$$
+
+---
+
+$$f'(x)=\frac{(2x-5)(x^2+1)-2x(x^2-5x+6)}{(x^2+1)}=\frac{5(x^2-2x-1)}{(x^2+1)^2}$$
+
+Find the extremums:
+
+$$f'(x)=0\implies x^2-2x-1=0\implies\begin{align*}
+\left[
+\begin{array}{ll}
+    x = 1 + \sqrt{2} \\
+    x = 1 - \sqrt{2}
+\end{array}
+\right .
+\end{align*}$$
+
+$$f''(x)=\frac{5(2x-2)(x^2+1)^2-20x(x^2-2x-1)(x^2+1)}{(x^2+1)^4}=$$
+
+$$=\frac{-10(x+1)(x^2-4x+1)}{(x^2+1)^3}$$
+
+$$f''(x)=0\implies(x+1)(x^2-4x+1)=0\implies\begin{align*}\left[
+\begin{array}{ll}
+    x = 2 + \sqrt{3} \\
+    x = 2 - \sqrt{3} \\
+    x = -1
+\end{array}
+\right .
+\end{align*}$$
+
+Since we have $-10$ in the numerator of the second derivative, we start alternating intervals from the right starting from a concave interval:
+
+* concave on $(2+\sqrt{3},+\infty)$ 
+* convex on $(2-\sqrt{3}, 2+\sqrt{3})$
+* concave on $(-1, 2-\sqrt{3})$
+* convex on $(-\infty, -1)$
+
+As for extremums, since the numberator of the first derivative is positive, we alternate intervals from the right starting from an ascending one:
+
+* function is ascending on $(1+\sqrt{2},+\infty)$
+* function is descending on $(1-\sqrt{2}, 1+\sqrt{2})$
+* function is ascending on $(-\infty,1-\sqrt{2})$
+
+which implies the extremums are:
+
+* $\sup_1f$ at $1-\sqrt{2}$
+* $\inf_1f$ at $1+\sqrt{2}$
+
+![Alt text](image-4.png)
