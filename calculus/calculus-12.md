@@ -64,13 +64,61 @@ to the general case for an arbitrary $n, \alpha_1\dots\alpha_n, \alpha_1+\dots+\
 
 The case for two $\alpha_1, \alpha_2$ is already proven, so we can use this as a base for our future endeavours.
 
-$f(\alpha_1x_1+\alpha_2x_2)\leq \alpha_1f(x_1)+\alpha_2f(x_2)$
+$$\alpha_1f(x_1)+\alpha_2f(x_2)\geq f(\alpha_1x_1+\alpha_2x_2)$$
 
-Let's try to extend this inequation, doubling up the number of $\alpha_i$ variables (here we use the equation above):
+Let's try to extend this inequation, doubling up the number of $\alpha_i$ variables (here we use the equation above, normalizing the variables):
 
 $$\frac{\alpha_1f(x_1)+\alpha_2f(x_2)+\alpha_3f(x_3)+\alpha_4f(x_4)}{\alpha_1+\alpha_2+\alpha_3+\alpha_4}\geq$$
 
+$$\geq\frac{(\alpha_1+\alpha_2)f(\frac{\alpha_1}{\alpha_1+\alpha_2}x_1+\frac{\alpha_2}{\alpha_1+\alpha_2}x_2)+(\alpha_3+\alpha_4)f(\frac{\alpha_3}{\alpha_3+\alpha_4}x_3+\frac{\alpha_3}{\alpha_3+\alpha_4}x_4)}{\alpha_1+\alpha_2+\alpha_3+\alpha_4}\geq$$
 
+use the very same equation once again (and $\alpha_1+\alpha_2+\alpha_3+\alpha_4=1$):
+
+$$\geq f(\alpha_1x_1+\alpha_2x_2+\alpha_3x_3+\alpha_4x_4)$$
+
+Therefore, for $n=2^n$, we have proven that 
+
+$$\alpha_1f(x_1)+\alpha_2f(x_2)+\alpha_3f(x_3)+\alpha_4f(x_4) \geq f(\alpha_1x_1+\alpha_2x_2+\alpha_3x_3+\alpha_4x_4)$$
+
+this means we can climb infinitely large up to powers of $2$. But how do we climb down?
+
+---
+
+Let's try to prove that given some $n$ the very same equation for $n-1$ would also be true.
+
+Assume that $x_n$ is equal to the mean of all other values in relation to weights:
+
+$$x_n=\frac{\alpha_1x_1+\dots+\alpha_{n-1}x_{n-1}}{\alpha_1+\dots+\alpha_{n-1}}$$
+
+We also know that if we take an weighted average of some number of values except for one and then say that the weighted value of the last element is equal to the aforemenioned weighted value, then the entire weighted average is equal to the last element:
+
+$$x_n=\frac{\alpha_1x_1+\dots+\alpha_{n-1}x_{n-1}+\alpha_nx_n}{\alpha_1+\dots+\alpha_n}$$
+
+$$x_n=\alpha_1x_1+\dots+\alpha_{n-1}x_{n-1}+\alpha_nx_n$$
+
+plug it in
+
+$$\alpha_1 f(x_1)+\dots+\alpha_n f(x_n)\geq f(\alpha_1 x_1 + \dots + \alpha_n x_n)$$
+
+to get
+
+$$\alpha_1 f(x_1)+\dots+\alpha_n f(x_n)\geq f(x_n)$$
+
+$$\alpha_1 f(x_1)+\dots\alpha_{n-1}f(x_{n-1})\geq f(x_n)-\alpha_n f(x_n)$$
+
+$$\alpha_1 f(x_1)+\dots\alpha_{n-1}f(x_{n-1})\geq f(x_n)(1-\alpha_n)$$
+
+plug more stuff back in:
+
+$$\alpha_1 f(x_1)+\dots\alpha_{n-1}f(x_{n-1})\geq f\left(\frac{\alpha_1x_1+\dots+\alpha_{n-1}x_{n-1}}{\alpha_1+\dots+\alpha_{n-1}}\right)(1-\alpha_n)$$
+
+considering that $1-\alpha_n=\alpha_1+\alpha_2+\dots+\alpha_{n-1}$,
+
+$$\frac{\alpha_1 f(x_1)+\dots+\alpha_{n-1}f(x_{n-1})}{\alpha_1+\alpha_2+\dots+\alpha_{n-1}}\geq f\left(\frac{\alpha_1x_1+\dots+\alpha_{n-1}x_{n-1}}{\alpha_1+\dots+\alpha_{n-1}}\right)$$
+
+and if the given condition of $\alpha_1+\alpha_2+\dots+\alpha_{n-1}=1$ holds for $n-1$, then we get the wanted equation! amazing
+
+$$\alpha_1 f(x_1)+\dots+\alpha_{n-1}f(x_{n-1})\geq f\left(\alpha_1x_1+\dots+\alpha_{n-1}x_{n-1}\right)$$
 
 ## Problem 4
 
