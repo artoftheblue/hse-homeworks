@@ -177,80 +177,101 @@ Optimal set of goods is $\displaystyle x=\frac{100\alpha}{\alpha + \beta}, y=\fr
 
 #### Second limitation for $U(x,y) = x^{\alpha} y^{\beta}$
 
-Budget limitation **at the wholesale base** based on budget $W_1=10\,000-4\,000=6\,000$, prices $p_1=100$ and $q_1=150$ is $B_1(x,y)=100x+150y-6000\leq0$. 
+Budget limitation **at the wholesale base** based on budget $W_1=10\,000-4\,000=6\,000$, prices $p_1=100$ and $q_1=150$, as well as $5$ extra gummy bears, is $B_1(x,y)=100\max\{0,x-5\}+150y-6000\leq0$. 
+
+$U(x,y) = x^{\alpha} y^{\beta}\sim U(x,y) = \alpha\log x+\beta\log y$
 
 Same-scale comparison as above:
 
-![alt text](image-19.png)
+![alt text](image-26.png)
 
-Since we get $5$ bonus gummy bears, we get bonus free utility and need to modify our utility function as follows: $U(x,y)=(x+5)^{\alpha} y^{\beta}\sim \overset{\sim}{U}(x,y) = \alpha\log(x+5) + \beta\log y$.
+Write out the Lagrangian and the first order conditions to find the optimal point when we decide to take $x\geq5$:
 
-Write out the Lagrangian and the first order conditions to find the optimal point:
-
-$$\mathcal{L}(x,y|\lambda)=\alpha\log (x+5) + \beta\log y-\lambda(100x+150y-6\,000)$$
+$$\mathcal{L}(x,y|\lambda)=\alpha\log x + \beta\log y-\lambda(100x+150y-6\,500)$$
 
 $$\begin{cases}
     \mathcal{L}_x'=0\\
     \mathcal{L}_y'=0\\
     \mathcal{L}_\lambda'=0
 \end{cases}\implies\begin{cases}
-    \frac{\alpha}{x+5}-100\lambda=0\\
+    \frac{\alpha}{x}-100\lambda=0\\
     \frac{\beta}{y}-150\lambda=0\\
-    100x+150y-6\,000=0
+    100x+150y-6\,500=0
 \end{cases}\implies$$
 
 $$\begin{cases}
-    \alpha = 100\lambda x + 500\lambda\\
+    \alpha = 100\lambda x\\
     \beta = 150\lambda y\\
-    2x + 3y=120
+    2x + 3y=130
 \end{cases}\implies\begin{cases}
     \alpha + \beta=6500\lambda\\
     \beta = 150\lambda y\\
-    2x + 3y=120
+    2x + 3y=130
 \end{cases}\implies\begin{cases}
     \lambda=\frac{\alpha + \beta}{6500}\\
-    y=\frac{130}{3}\frac{\beta}{\alpha + \beta}\\
-    x=\frac{60\alpha}{\alpha + \beta}
+    x=\frac{65\alpha}{\alpha + \beta}\\
+    y=\frac{130\beta}{3(\alpha + \beta)}\\
 \end{cases}$$
 
 Cobb-Douglasesque visualization similar to above:
 
-![alt text](image-20.png)
+![alt text](image-27.png)
 
-Optimal set of goods for this scenario is $\displaystyle x=\frac{60\alpha}{\alpha + \beta},y=\frac{130}{3}\frac{\beta}{\alpha + \beta}$.
+Optimal set of goods for this scenario is $\displaystyle x=\frac{65\alpha}{\alpha + \beta},y=\frac{50\beta}{\alpha + \beta}$.
+
+Plus, we need to additionally check the edge case for when the optimum scenario lies within the $x<5$ sector, which our solution doesn't yet account for.
+
+$$\frac{65\alpha}{\alpha + \beta}<5\implies65\alpha<5\alpha+5\beta\implies12\alpha<\beta$$
+
+This means that if $12\alpha<\beta$, then we take the option of $(x,y)=(5,40)$
 
 #### Optimum for $U(x,y) = x^{\alpha} y^{\beta}$
 
-Finally, calculate the utility values for each of the cases. Compare the first one to the second one and first when the first option is preferable (first un-normalize everything by multiplying the entire equation by $\displaystyle\frac{1}{(\alpha+\beta)^\alpha(\alpha+\beta)^\beta}$):
+Now compare utilities for the first case and for the second case:
 
-$$U_1(x_1,y_2)>U_2(x_1,y_2)$$
+$$(x,y)_1=\left(\frac{100\alpha}{\alpha + \beta},\frac{25\beta}{\alpha + \beta}\right)$$
 
-$$\left(100\alpha\right)^{\alpha}\left(25\beta\right)^{\beta}-\left(65\alpha+5\beta\right)^{\alpha}\left(\frac{130}{3}\cdot \beta\right)^{\beta}>0$$
+$$(x,y)_2=\left(\frac{65\alpha}{\alpha + \beta},\frac{130\beta}{3(\alpha + \beta)}\right)$$
 
-$$\left(20\alpha\right)^{\alpha}\left(5\beta\right)^{\beta}-\left(13\alpha+\beta\right)^{\alpha}\left(\frac{26}{3}\cdot \beta\right)^{\beta}>0$$
+$$U_1(x,y)>U_2(x,y)$$
 
-At this point I have plotted it in desmos and it turned out to linear, therefore assume $\alpha=\gamma\beta$ and substitute it into the equation above.
+$$\frac{100^\alpha\alpha^\alpha}{(\alpha + \beta)^\alpha}\frac{25^\beta\beta^\beta}{(\alpha + \beta)^\beta}>\frac{65^\alpha\alpha^\alpha}{(\alpha + \beta)^\alpha}\frac{\frac{130}{3}^\beta\beta^\beta}{(\alpha + \beta)^\beta}$$
 
-![alt text](image-21.png)
+$$100^\alpha\alpha^\alpha25^\beta\beta^\beta>65^\alpha\alpha^\alpha\frac{130}{3}^\beta\beta^\beta$$
 
-$$\left(20\gamma\beta\right)^{\gamma\beta}\left(5\beta\right)^{\beta}>\left(13\gamma\beta+\beta\right)^{\gamma\beta}\left(\frac{26}{3}\cdot \beta\right)^{\beta}$$
+$$\frac{100^\alpha\alpha^\alpha25^\beta\beta^\beta}{65^\alpha\alpha^\alpha\frac{130}{3}^\beta\beta^\beta}>1$$
 
-$$\left(5\beta^{\gamma+1}(20\gamma)^{\gamma}\right)^\beta>\left(\frac{26}{3}\beta^{\gamma+1}\left(13\gamma+1\right)^{\gamma}\right)^{\beta}$$
+Considering that $\alpha=\gamma\beta$:
 
-$$\frac{\left(5\beta^{\gamma+1}(20\gamma)^{\gamma}\right)^\beta}{\left(\displaystyle\frac{26}{3}\beta^{\gamma+1}\left(13\gamma+1\right)^{\gamma}\right)^{\beta}}>1$$
+$$\frac{100^{\beta\gamma}25^\beta}{65^{\beta\gamma}\frac{130}{3}^\beta}>1$$
 
-$$\frac{15(20\gamma)^{\gamma}}{26\left(13\gamma+1\right)^{\gamma}}>1$$
+$$\frac{100^{\gamma}\cdot 5}{65^{\gamma}\cdot\frac{26}{3}}>1$$
 
-Since we know that $\alpha$ and $\beta$ are positive real numbers, then a transcendent solution for the inequation above certainly exists. Using the magic of python, I can estimate that
+We get
 
-$$\gamma=0.6892531817663474656295857666\dots$$
+$$\gamma=\frac{\log(2)-\log(3)-\log(5)+\log(13)}{2\log(2)+\log(5)-\log(13)}$$
 
-Therefore, we get the ratio of $\displaystyle\frac{\beta}{\alpha}=\gamma$ when both utility functions are equal, which implies that we take the first optimal set when $\beta\leq\gamma\alpha$ and the second optimal set when $\beta\geq\gamma\alpha$:
+> I extensively checked this in desmos, so if this is not right, I am going to literally explode.
+
+Visualization for these conditions whenever utility graphs are the same and yield the very same utility value.
+
+![alt text](image-28.png)
+
+Visualization when the first option (red) is preferable:
+
+![alt text](image-29.png)
+
+When the second option (purple) is preferable:
+
+![alt text](image-30.png)
+
+Therefore, the final answer to this monstrosity:
 
 $$\begin{cases}
-    (x,y)=\displaystyle\left(\frac{100\alpha}{\alpha + \beta}, \frac{25\beta}{\alpha + \beta}\right), \quad \beta\leq\gamma\alpha\\
-    (x,y)=\displaystyle\left(\frac{60\alpha}{\alpha + \beta},\frac{130}{3}\frac{\beta}{\alpha + \beta}\right), \quad \beta\geq\gamma\alpha\\
-    \gamma=0.6892531817663474656295857666\dots
+    (x,y)_0=(5,40),\quad \alpha<\displaystyle\frac{\beta}{12}\\\\
+    (x,y)_1=\displaystyle\left(\frac{100\alpha}{\alpha + \beta},\frac{25\beta}{\alpha + \beta}\right),\quad \alpha<\gamma\beta\\\\
+    (x,y)_2=\displaystyle\left(\frac{65\alpha}{\alpha + \beta},\frac{130\beta}{3(\alpha + \beta)}\right),\quad\alpha\geq\gamma\beta\\\\
+    \gamma=\displaystyle\frac{\log(2)-\log(3)-\log(5)+\log(13)}{2\log(2)+\log(5)-\log(13)}\approx1.27685271716\dots\\
 \end{cases}$$
 
 ---
@@ -275,7 +296,7 @@ $$(x,y)=(100,0)$$
 
 Utility function and budget limitation for this case, similarly as above:
 
-$$U(x,y) = (x+5)^2 + y^2$$
+$$U(x,y) = x^2 + y^2$$
 
 $$B_1(x,y)=100x+150y-6000\leq0$$
 
@@ -283,7 +304,7 @@ For the same reasons as above, we strive to buy as much of the cheapest good as 
 
 ![alt text](image-23.png)
 
-We are able to afford $x=\frac{6000}{100}=60$ gummy bear units, which is our optimal choice, and which gives us $(60+5)^2=65^2=4225$ utility units:
+We are able to afford $x=\frac{6000}{100}=60$ gummy bear units, which is our optimal choice, and which gives us $60^2=3600$ utility units:
 
 $$(x,y)=(60, 0)$$
 
@@ -294,6 +315,58 @@ The first option gives us more utility, so **the preffered variant is to stay at
 ###  4. Вот такие пироги (20 баллов)
 
 Оксана закупает пироги для одного научного мероприятия. Её функция полезности $U(x,y) = 100 - (x-5)^2 - (y-3)^2$, где $x$ — пироги с яйцом,  $y$ — пироги с луком. Запишите функции спроса Оксаны на пироги. Как эти функции зависят от дохода и цен? Являются ли товары субститутами или комплементами? Посчитайте ценовую эластичность спроса на пироги с яйцом. 
+
+---
+
+Let's solve the maximization problem for this utility function an a budget limitation of $B(x,y)=px+qy-W\leq0$:
+
+$$\mathcal{L}(x,y|\lambda)=100-(x-5)^2-(y-3)^2-\lambda(px+qy-W)$$
+
+$$\begin{cases}
+    \mathcal{L}_x'=0\\
+    \mathcal{L}_y'=0\\
+    \mathcal{L}_\lambda'=0
+\end{cases}\implies\begin{cases}
+    -2(x-5)-\lambda p=0\\
+    -2(y-3)-\lambda q=0\\
+    px+qy-W=0
+\end{cases}\implies$$
+
+$$\begin{cases}
+    -2x+10-\lambda p=0\\
+    -2y+6-\lambda q=0\\
+    px+qy-W=0
+\end{cases}\implies\begin{cases}
+    \lambda=\frac{10-2x}{p}\\
+    \lambda=\frac{6-2y}{q}\\
+    px+qy-W=0
+\end{cases}\implies$$
+
+Take a singular equation out of here:
+
+$$\frac{10-2x}{p}=\frac{6-2y}{q}$$
+
+$$\frac{5-x}{p}=\frac{3-y}{q}$$
+
+$$x=5-(3-y)\frac{p}{q}$$
+
+Now, since $\displaystyle y=\frac{W-px}{q}$
+
+$$x=5-\left(3-\frac{W-px}{q}\right)\frac{p}{q}$$
+
+$$q^2x=5q^2-3pq-Wp-p^2x$$
+
+$$x^*=\frac{5q^2-3pq-Wp}{p^2+q^2}$$
+
+And since $\displaystyle x=\frac{W-qx}{p}$
+
+$$y=3-(5-x)\frac{q}{p}$$
+
+$$y=3-\left(5-\frac{W-qx}{p}\right)\frac{q}{p}$$
+
+$$p^2y=3p^2-5pq-Wq-q^2x$$
+
+$$y^*=\frac{3p^2-5pq-Wq}{p^2+q^2}$$
 
 ###  5. Снеки для Ани (20 баллов)
 
@@ -318,6 +391,10 @@ The first option gives us more utility, so **the preffered variant is to stay at
 2. Используя здравый смысл, аргументируйте, являются ли данные снеки субститутами или комплементами? Можете ли вы найти этому подтверждение в данных для Ани? Объясните.
 3. Какую из четырех полезностей (полезность Кобба-Дугласа, линейная, квазилинейная, леонтьевская) вы бы выбрали для описания предпочтений Ани? Объясните свой выбор и придумайте способ откалибровать её.
 4. Для откалиброванной полезности найдите спрос Ани на сыр и чипсы. 
+
+---
+
+
 
 ###  6.  Кривые Энгеля (10 баллов)
 
