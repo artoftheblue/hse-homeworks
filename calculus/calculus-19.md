@@ -4,6 +4,22 @@
 
 Let $\omega_{k,m}=x^k\ln^m(x)$. Find the integral of this form for all $k, m$. (Present a recurrent formula).
 
+$$\int x^k\ln^m(x)dx=\int_m$$
+
+$$u=\ln^m(x), dv = x^kdx, du=m\ln^{m-1}(x)\frac{1}{x}dx, v=\frac{x^{k+1}}{k+1}$$
+
+$$\frac{\ln^m(x)x^{k+1}}{k+1}-\int\frac{m\ln^{m-1}(x)x^{k+1}}{(k+1)x}dx=$$
+
+$$\frac{\ln^m(x)x^{k+1}}{k+1}-\frac{m}{k+1}\int\ln^{m-1}(x)x^{k}dx$$
+
+$$\int_m=\frac{\ln^m(x)x^{k+1}}{k+1}-\frac{m}{k+1}\int_{m-1}$$
+
+$$\int_1=\int x^k\ln(x)dx$$
+
+$$u=\ln(x), dv = x^kdx, du=\frac{1}{x}dx, v=\frac{x^{k+1}}{k+1}$$
+
+$$\int_1=\frac{\ln(x)x^{k+1}}{k+1}+\frac{1}{k+1}\int x^kdx=\frac{\ln(x)x^{k+1}}{k+1}+\frac{x^{k+1}}{(k+1)^2}$$
+
 ## Problem 2
 
 > Find the following integrals:
@@ -55,6 +71,10 @@ $$\frac{1}{3}x\sin 3x-\frac{1}{9}\cos(3x)+C$$
 ### Subproblem C
 
 $$\int \frac{x\cos(x)}{\sin^2(x)}dx$$
+
+$$f=x, dg=\frac{\cos(x)}{\sin^2(x)}, g=-\frac{1}{\sin (x)},df=dx$$
+
+$$-\frac{x}{\sin(x)}-\int\frac{dx}{\sin(x)}=-\frac{x}{\sin(x)}-\ln\tg\frac{x}{2}$$
 
 ### Subproblem D
 
@@ -300,21 +320,98 @@ $$+\frac{1}{4}\left(\int\frac{dx}{(x^2-x+1)}+\int\frac{dx}{(x^2+x+1)}\right)$$
 
 $$\int\frac{dx}{(x^2\plusmn x+1)}=\int\frac{dx}{(x\plusmn\frac{1}{2})^2+\frac{3}{4}}=\frac{4}{3}\int\frac{dx}{\frac{4}{3}(x\plusmn\frac{1}{2})^2+1}$$
 
-$$=\frac{4}{3}\int\frac{dx}{(\frac{2}{\sqrt{3}}(x\plusmn\frac{1}{2}))^2+1}=\frac{4}{3}\frac{\sqrt{3}}{2}\int\frac{d(\frac{2}{\sqrt{3}}(x\plusmn\frac{1}{2}))}{(\frac{2}{\sqrt{3}}(x\plusmn\frac{1}{2}))^2+1}=$$
+$$=\frac{4}{3}\int\frac{dx}{(\frac{2}{\sqrt{3}}(x\plusmn\frac{1}{2}))^2+1}=\frac{4}{3}\frac{\sqrt{3}}{2}\int\frac{d(\frac{2}{\sqrt{3}}(x\plusmn\frac{1}{2}))}{(\frac{2}{\sqrt{3}}(x\plusmn\frac{1}{2}))^2+1}+C=$$
 
 $$\frac{2}{\sqrt{3}}\int\frac{d(\frac{2}{\sqrt{3}}(x\plusmn\frac{1}{2}))}{(\frac{2}{\sqrt{3}}(x\plusmn\frac{1}{2}))^2+1}=\frac{2}{\sqrt{3}}\arctg \left(\frac{2}{\sqrt{3}}(x\plusmn\frac{1}{2})\right)$$
 
 > And now the final integral:
 
-$$\frac{1}{4}(\ln(x^2+x+1)-\ln(x^2-x-1))+\\+\frac{1}{4}\left(\frac{2}{\sqrt{3}}\arctg \left(\frac{2}{\sqrt{3}}(x-\frac{1}{2})\right)+\frac{2}{\sqrt{3}}\arctg \left(\frac{2}{\sqrt{3}}(x+\frac{1}{2})\right)\right)=$$
+$$\frac{1}{4}(\ln(x^2+x+1)-\ln(x^2-x-1))+\\+\frac{1}{4}\left(\frac{2}{\sqrt{3}}\arctg \left(\frac{2}{\sqrt{3}}(x-\frac{1}{2})\right)+\frac{2}{\sqrt{3}}\arctg \left(\frac{2}{\sqrt{3}}(x+\frac{1}{2})\right)\right)+C=$$
 
-$$\frac{1}{4}(\ln(x^2+x+1)-\ln(x^2-x-1))+\\+\frac{1}{2\sqrt{3}}\left(\arctg \left(\frac{2}{\sqrt{3}}(x-\frac{1}{2})\right)+\arctg \left(\frac{2}{\sqrt{3}}(x+\frac{1}{2})\right)\right)$$
+$$\frac{1}{4}(\ln(x^2+x+1)-\ln(x^2-x-1))+\\+\frac{1}{2\sqrt{3}}\left(\arctg \left(\frac{2}{\sqrt{3}}(x-\frac{1}{2})\right)+\arctg \left(\frac{2}{\sqrt{3}}(x+\frac{1}{2})\right)\right)+C$$
 
 
 ### Subproblem F
 
 $$\int\frac{dx}{x^6+1}$$
 
+$$\int\frac{dx}{(x^2-\sqrt{3}x+1)(x^2+\sqrt{3}x+1)(x^2+1)}=$$
+
+$$\int\left(\frac{Cx+D}{x^2-\sqrt{3}x+1}+\frac{Ex+F}{x^2+\sqrt{3}x+1}+\frac{Ax+B}{x^2+1}\right)dx$$
+
+$$1 = -B+D-F+(-A+C-E)x^5+(-B+\sqrt{3}C+D+\sqrt{3}E-F)x^4+\\+(A+2C+\sqrt{3}D-2E+\sqrt{3}F)x^3+(B+\sqrt{3}C+2D+\sqrt{3}E-2F)x^2+\\+(-A+C+\sqrt{3}D-E+\sqrt{3}F)x$$
+
+$$\begin{pmatrix}
+    0 & -1 & 0 & 1 & 0 & -1\\
+    -1 & 0 & 1 & \sqrt{3} & -1 & \sqrt{3}\\
+    0 & 1 & \sqrt{3} & 2 & \sqrt{3} & -2\\
+    1 & 0 & 2 & \sqrt{3} & -2 & \sqrt{3}\\
+    0 & -1 & \sqrt{3} & 1 & \sqrt{3} & -1\\
+    -1 & 0 & 1 & 0 & - 1 & 0\\
+\end{pmatrix}\begin{pmatrix}
+    A\\
+    B\\
+    C\\
+    D\\
+    E\\
+    F\\
+\end{pmatrix}=\begin{pmatrix}
+    1\\
+    0\\
+    0\\
+    0\\
+    0\\
+    0\\
+\end{pmatrix}\implies$$
+
+$$\begin{pmatrix}
+    A\\
+    B\\
+    C\\
+    D\\
+    E\\
+    F\\
+\end{pmatrix}=\begin{pmatrix}
+    0\\
+    -\frac{1}{3}\\
+    -\frac{1}{2\sqrt{3}}\\
+    \frac{1}{3}\\
+    -\frac{1}{2\sqrt{3}}\\
+    -\frac{1}{3}\\
+\end{pmatrix}$$
+
+$$\int\left(\frac{-\frac{x}{2\sqrt{3}}+\frac{1}{3}}{x^2-\sqrt{3}x+1}+\frac{\frac{x}{2\sqrt{3}}+\frac{1}{3}}{x^2+\sqrt{3}x+1}\right)dx+\frac{1}{3}\int\frac{dx}{x^2+1}$$
+
+Solve for 
+
+$$\int\frac{\plusmn\frac{x}{2\sqrt{3}}+\frac{1}{3}}{x^2\plusmn\sqrt{3}x+1}dx=\frac{1}{12}\int\frac{1}{x^2\plusmn\sqrt{3}x+1}dx\plusmn\frac{1}{4\sqrt{3}}\int\frac{2x-\sqrt{3}}{x^2-\sqrt{3}x+1}dx$$
+
+First part:
+
+$$\int\frac{dx}{x^2\plusmn\sqrt{3}x+1}=4\int\frac{dx}{(2x\plusmn\sqrt{3})^2+1}=2\int\frac{d(2x\plusmn\sqrt{3})}{(2x\plusmn\sqrt{3})^2+1}=\\2\arctg(2x\plusmn\sqrt{3})+C$$
+
+Second part:
+
+$$\int\frac{2x\plusmn\sqrt{3}}{x^2\plusmn\sqrt{3}x+1}dx=\int\frac{d(2x\plusmn\sqrt{3})}{x^2\plusmn\sqrt{3}x+1}=\ln(x^2\plusmn\sqrt{3}x+1)+C$$
+
+Third part:
+
+$$\int\frac{dx}{x^2+1}=\arctg(x)+C$$
+
+Finally:
+
+$$\int\left(\frac{-\frac{x}{2\sqrt{3}}+\frac{1}{3}}{x^2-\sqrt{3}x+1}+\frac{\frac{x}{2\sqrt{3}}+\frac{1}{3}}{x^2+\sqrt{3}x+1}\right)dx+\frac{1}{3}\int\frac{dx}{x^2+1}=$$
+
+$$\frac{1}{6}(\arctg(2x+\sqrt{3})+\arctg(2x-\sqrt{3}))+\\\frac{1}{4\sqrt{3}}\left(\ln(x^2+\sqrt{3}x+1)-\ln(x^2-\sqrt{3}x+1)\right)+\frac{1}{3}\arctg x+C$$
+
 ### Subproblem G
 
 $$\int\frac{dx}{x^5-x^4+x^3-x^2+x-1}$$
+
+I'm insanely lazy, so notice that
+
+$$-\frac{1}{6}\int\frac{2x+1}{x^2+x+1}dx-\frac{1}{2}\int\frac{dx}{x^2-x+1}+\frac{1}{3}\int\frac{dx}{x-1}$$
+
+First two integrals we have already calculated and the last one is terribly easy, so the answer is:
+
+$$-\frac{1}{6}\ln(x^2+x+1)+\frac{1}{3}\ln(1-x)-\frac{\sqrt{3}}{3}\arctg\left(\frac{2\sqrt{3}}{3}x-\frac{\sqrt{3}}{3}\right)$$
