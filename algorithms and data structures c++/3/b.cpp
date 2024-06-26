@@ -109,7 +109,7 @@ int main() {
     std::cout << eccentricity << ' ' << size << ' ';
     std::sort(center_list.begin(), center_list.end());
 
-    for (uint i = 0; i < size; ++i) {
+    for (int i = 0; i < size; ++i) {
         std::cout << center_list[i] << ' ';
     }
     std::cout << std::endl;
