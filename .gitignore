@@ -4,3 +4,5 @@ life safety/
 .vscode/settings.json
 microeconomics/me.jpg
 /contest
+.idea/
+/cmake-build-debug
