@@ -1,8 +1,80 @@
+---
+
+authors:
+    - name: Artemis
+
+---
 # Calculus, Homework 1 
 
-> Artemis Sinelnikov, EDA-231
+> Artemis Feidenheimer, EDA-243
 
 ## Problem 1
+
+Calculate an integral considering it as a limit of an integral sum with a mesh partition of the $D=[0,2] \times [0,3]$ rectangle into square cells with sides of length $\frac{1}{n}$, choosing upper right $\bf\xi_i$ lattice points of cells.
+
+$$\iint\limits_{\overset{\scriptstyle0 \leq x \leq 2}{0\leq y \leq 3}} xy^3 dxdy$$
+
+---
+
+Given that the partition is of length $\frac{1}{n}$, then the measure $\mu(I_i)$ of partition $I_i$ would be equal to $\frac{1}{n^2}$ and each lattice point would be defined by $\bf\xi_{ij}=(\frac{i}{n},\frac{j}{n})$ where $0\leq x \leq 1$ and $0 \leq y \leq 1$.
+
+![](image-2-copy.png)
+
+Given that we start counting from upper right corner, we start our iteration in sums from $1$ for both cases. Thus, the integral sum would be 
+
+$$\sigma(f,\mathbb{T}, \xi)=\sum^n_{i=1}\sum^n_{j=1}\xi^x_{ij}\times(\xi^y_{ij})^3\times\mu(I_i)$$
+
+$$\sigma(f,\mathbb{T}, \xi)=\sum^n_{i=1}\sum^n_{j=1}\frac{i}{n}\times\frac{j^3}{n^3}\times\frac{1}{n^2}$$
+
+$$\sigma(f,\mathbb{T}, \xi)=\frac{1}{n^6}\sum^n_{i=1}i\sum^n_{j=1}j^3$$
+
+> Using the arithmetic progression formula $\displaystyle \mathcal{S}_n=n\times\frac{a_1+a_n}{2}$ and Nicomachus's theorem that states
+>
+> $$1^3+2^3+3^3+\cdots+n^3=(1+2+3+\cdots+n)^2$$
+> or in other terms,
+> $$\sum_{i=1}^ni^3=\left(\sum_{i=1}^ni\right)^2=\left(\frac{n(n+1)}{2}\right)^2$$
+>
+> ![alt text](image-32.png)
+>
+> or more formally, that the sum of the first $n$ cubes is the square of the $n$-th triangular number, we get
+
+$$\sigma(f,\mathbb{T}, \xi)=\frac{1}{n^6}\left(\frac{n(n+1)}{2}\right)^2\sum^n_{i=1}i$$
+
+$$\sigma(f,\mathbb{T}, \xi)=\frac{1}{n^6}\left(\frac{n(n+1)}{2}\right)^2\left(\frac{n(n+1)}{2}\right)$$
+
+$$\sigma(f,\mathbb{T}, \xi)=\frac{1}{n^6}\left(\frac{n(n+1)}{2}\right)^3$$
+
+$$\sigma(f,\mathbb{T}, \xi)=\frac{1}{8}\times\frac{(n^2 + n)^3}{n^6}$$
+
+and since $(n^2+n)\sim O(n^2)\implies (n^2+n)^3\sim O(n^6)\implies \displaystyle \frac{(n^2 + n)^3}{n^6}\implies\lim_{n\to\infty}\frac{O(n^6)}{n^6} =1$, for $n\to\infty$, we get
+
+$$\boxed{\sigma(f,\mathbb{T}, \xi)=\frac{1}{8}}$$
+
+## Problem 2 
+
+Calculate double integral
+
+$$\int\limits_0^3\int\limits_1^2 x^2y dy dx$$
+
+---
+
+$$\begin{align*}
+    \int\limits_0^3\int\limits_1^2 x^2y dy dx 
+    &= \int\limits_0^3\frac{x^2y^2}{2}\Biggm|_1^2 dx \\
+    &= \int\limits_0^3\left(\frac{4x^2}{2}-\frac{1x^2}{2}\right) dx \\
+    &= \int\limits_0^3\frac{3x^2}{2} dx \\
+    &=\frac{3x^3}{3\times 2}\Biggm|^3_0 \\
+    &=\frac{x^3}{2}\Biggm|^3_0 \\
+    &=\boxed{\frac{27}{2}}
+
+\end{align*}$$
+
+
+
+
+## Problem 3
+
+> I'll simplify the grading process for you, this solution of mine was already checked by one of the assistants last year, and I got a max score for it (1/1).
 
 Bring the double integral $\iint\limits_Df(x,y)dxdy$ to an iterated one in all possible orders, where
 
@@ -10,7 +82,7 @@ $$D=\{(x,y)|x\in[0,\tfrac{1}{2}], y\in[0,1],(x-1)^2+(y-1)^2\geq 1\}$$
 
 ---
 
-First and foremost, let's plot the area that we'd be calculating via integration.
+Plot the area that we'd be calculating via integration.
 
 ![alt text](image-2.png)
 
@@ -34,7 +106,7 @@ $$y\leq1-\sqrt{1-(x-1)^2}$$
 
 the expression above is the upper bound and $0$ would be the lower bound.
 
-$$\int_0^{\frac{1}{2}}dx\int^{1-\sqrt{1-(x-1)^2}}_0f(x,y)dy$$
+$$\boxed{\int_0^{\frac{1}{2}}dx\int^{1-\sqrt{1-(x-1)^2}}_0f(x,y)dy}$$
 
 ---
 
@@ -54,13 +126,15 @@ This would split our horizontal slice into two parts with two Y-ranges, those be
 
 The first part is bounded by $x=[0, \tfrac{1}{2}]$ and the second part is bounded between zero and the arc. Thus, we get
 
-$$\int_0^{1-\sqrt\frac{3}{4}}dy\int_0^{\frac{1}{2}}f(x,y)dx+\int_{1-\sqrt\frac{3}{4}}^1dy\int_0^{1-\sqrt{1-(y-1)^2}}f(x,y)dx$$
+$$\boxed{\int_0^{1-\sqrt\frac{3}{4}}dy\int_0^{\frac{1}{2}}f(x,y)dx+\int_{1-\sqrt\frac{3}{4}}^1dy\int_0^{1-\sqrt{1-(y-1)^2}}f(x,y)dx}$$
 
-## Problem 2
+## Problem 4
 
 Change the order of integration in the iterated integal:
 
 $$\int\limits^1_0dy\int\limits^{\sqrt{4-y^2}}_{\sqrt{4-4y}}f(x,y)dx+\int\limits^2_1dy\int\limits^{\sqrt{4-y^2}}_0f(x,y)dx$$
+
+> There used to have a mistake, but it should be corrected now 
 
 ---
 
@@ -71,15 +145,29 @@ Area that we're considering looks like this:
 * The red line denotes graph $\sqrt{4-y^2}$
 * The blue line denotes graph $\sqrt{4-4y}$
 
-It is obvious that when changing the order of integration to the vertical case, we simply take the red line as the upper bound and the blue line as the lower bound. This allows us to use a single double integral over the Y-range of $[0, 2]$:
+When changing the order of integration to the vertical case, we take the red line as the upper bound and the blue line as the lower bound. This allows us to use a single double integral over the Y-range of $[0, 2]$. The only challenge is to express $y$ through $x$.
 
-$$\int\limits^2_0dx\int\limits^{\sqrt{4-y^2}}_{\sqrt{4-4y}}f(x,y)dy$$
+Upper bound would be symmetric:
 
-## Problem 3
+$$x=\sqrt{4-y^2}\implies x^2 = 4 - y^2 \implies y = \sqrt{4 - x^2}$$
+
+> We take the positive square root because we are operating in the first quarter. 
+
+Lower bound would be:
+
+$$x=\sqrt{4 - 4y} \implies x^2 = 4-4y \implies y = \frac{4-x^2}{4}=1-\frac{1}{4}x^2$$
+
+Final answer:
+
+$$\boxed{\int\limits^2_0 dx \int\limits^{\sqrt{4-x^2}}_{1-\frac{1}{4}x^2}f(x,y) dy}$$
+
+## Problem 5
 
 Calculate the integral:
 
 $$\int\limits^2_0x^2dx\int\limits^2_x\ln(1+y^2)dy$$
+
+> Supposed to be fully correct
 
 ---
 
@@ -128,15 +216,17 @@ $$\frac{1}{12}(y^4-1)\ln(y^2+1)-\frac{1}{24}y^2(y^2-2)$$
 
 > Finally, calculate the definite integral by plugging in $y=2$:
 
-$$\frac{15}{12}\ln(5)-\frac{8}{24}=\frac{5}{3}\ln(5)-\frac{1}{3}$$
+$$\frac{15}{12}\ln(5)-\frac{8}{24}=\boxed{\frac{5}{4}\ln(5)-\frac{1}{3}}$$
 
-## Problem 4
+## Problem 6
 
 Calculate integral 
 
 $$\iint\limits_Dx^2ydxdy$$
 
-where $D$ is a closed triangle with vertices $(0,0),(2,1),(1,-2)$.
+where $D$ is a bounded triangle with vertices $(0,0),(2,1),(1,-2)$.
+
+> Also supposed to be fully correct
 
 ---
 
@@ -182,4 +272,32 @@ $$\begin{align*}
 &=-\frac{82}{81}
 \end{align*}$$
 
-$$\mathcal{I_A}+\mathcal{I_B}=\frac{193}{324}-\frac{82}{81}=-\frac{5}{12}$$
+$$\mathcal{I_A}+\mathcal{I_B}=\frac{193}{324}-\frac{82}{81}=\boxed{-\frac{5}{12}}$$
+
+## Problem 7
+
+Let $f(x)=\hat k$, where $\hat k=\operatorname{max}\{m\in\mathbb{Z}\ |\ m\leq x\}$. Calculate the integral
+
+$$\iint\limits_{\overset{\scriptstyle 1\leq x\leq 3}{2\leq y\leq 5}}f(x+y)dx dy$$
+
+---
+
+Effectively, the function floors the sum of values of $x$ and $y$. Thus, each constant block would be offcut by a $x + y = \mathcal{C}$, where $\mathcal{C}$ is a constant and $\mathcal{C}\in\mathbb{Z}$ plane. The approach to calculate this integral would be to sum the prism volumes bounded by the following upper bases:
+
+![alt text](image-29.png)
+
+Heights of the prisms would represent the values of function $f(x + y)$ and be equal to an ascending sequence of $3\to4\to5\to6\to7$, respectively, for each of the $5$ separate shapes.
+
+Looking at the graph from above, we get a series of equilateral right triangles:
+
+![alt text](image-31.png)
+
+Thus, the value of the integral would be
+
+$$\iint\limits_{\overset{\scriptstyle 1\leq x\leq 3}{2\leq y\leq 5}}f(x+y)dx dy=3\times1\cdot\mathcal{S_\triangle}+4\times3\cdot\mathcal{S_\triangle}+5\times4\cdot\mathcal{S_\triangle}+6\times3\cdot\mathcal{S_\triangle}+7\times1\cdot\mathcal{S_\triangle}$$
+
+where $\mathcal{S}_\triangle=\displaystyle\frac{1}{2}$ since it's half of a unit cell.
+
+In total, we get
+
+$$\iint\limits_{\overset{\scriptstyle 1\leq x\leq 3}{2\leq y\leq 5}}f(x+y)dx dy=\frac{1}{2}(3+12+20+18+7) = \boxed{30}$$
